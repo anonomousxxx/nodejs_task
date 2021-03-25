@@ -3,7 +3,7 @@ require('../utils/loadEnv');
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
-let saltingRounds = Number(process.env.SALTING_ROUNDS || 10);
+const saltingRounds = Number(process.env.SALTING_ROUNDS || 10);
 
 const Schema = mongoose.Schema;
 

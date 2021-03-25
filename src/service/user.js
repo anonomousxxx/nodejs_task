@@ -1,9 +1,9 @@
-let auth = require('../service/auth');
+const auth = require('../service/auth');
 const User = require('../models/users');
 
 module.exports = {
     register: (req, res) => {
-        let newUser = new User(req.body);
+        const newUser = new User(req.body);
         let result = {};
         let status = 201;
         newUser.save(function (err, user) {

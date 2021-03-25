@@ -12,9 +12,9 @@ module.exports = {
     getDadJoke: async (req, res) => {
         let result;
         let status = 200;
-        let jokeRes = await getJSON(dadJokeUrl)
+        const jokeRes = await getJSON(dadJokeUrl)
         if (res.statusCode === 200) {
-            let joke = jokeRes.body["joke"]
+            const joke = jokeRes.body["joke"]
             result = {joke: joke}
         } else {
             status = 500
@@ -25,9 +25,9 @@ module.exports = {
     getChuckNorrisFact: async (req, res) => {
         let result;
         let status = 200;
-        let factRes = await getJSON(chuckNorrisFactUrl)
+        const factRes = await getJSON(chuckNorrisFactUrl)
         if (res.statusCode === 200) {
-            let fact = factRes.body["value"]
+            const fact = factRes.body["value"]
             result = {fact: fact}
         } else {
             status = 500

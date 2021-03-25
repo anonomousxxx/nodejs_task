@@ -1,8 +1,8 @@
-let express = require('express');
+const express = require('express');
 require('express-async-errors');
-let app = express();
+const app = express();
 const bodyParser = require('body-parser');
-let routes = require('./router/index')
+const routes = require('./router/index')
 
 const errorHandler = function (err, req, res, next) {
     console.error(err.stack);
