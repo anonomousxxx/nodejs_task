@@ -1,0 +1,30 @@
+version: '3.7'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    container_name: app
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongo
+    command: npm start
+    restart: unless-stopped
+  mongo:
+    image: mongo:4.0
+    container_name: "mongo"
+    environment:
+      - MONGO_DATA_DIR=/data/db
+      - MONGO_LOG_DIR=/dev/null
+    volumes:
+      - "mongo_data:/data/db"
+    command: mongod --smallfiles --logpath=/dev/null
+    ports:
+      - 27017:27017
+    restart: unless-stopped
+
+volumes:
+  mongo_data:
