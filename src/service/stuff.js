@@ -18,7 +18,7 @@ module.exports = {
             result = {joke: joke}
         } else {
             status = 500
-            result = ({error: 'Failed to get dad joke'})
+            result = {error: 'Failed to get dad joke'}
         }
         res.status(status).send(result);
     },
@@ -31,7 +31,7 @@ module.exports = {
             result = {fact: fact}
         } else {
             status = 500
-            result = ({error: 'Failed to get Chuck Norris fact'})
+            result = {error: 'Failed to get Chuck Norris fact'}
         }
         res.status(status).send(result);
     }
